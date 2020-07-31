@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-//import { Todo } from '@models';
+import { Todo } from '@models';
 
 
 @Injectable()
@@ -10,5 +10,5 @@ export class TodoService {
   // automatic incrementing of ids
   lastId: number = 0;
 
- // todoes: Todo[] = [];
+ todoes: Todo[] = [];
 }
