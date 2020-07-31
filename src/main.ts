@@ -7,11 +7,11 @@ import {MatNativeDateModule} from '@angular/material/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {DemoMaterialModule} from './app/material-module';
 import {MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
 
+import {BadgeOverviewExample} from './app/badge-overview-example';
 import { AppComponent } from './app/app.component';
-
-import {MaterialModule} from './app/material.module';
 
 // Default MatFormField appearance to 'fill' as that is the new recommended approach and the
 // `legacy` and `standard` appearances are scheduled for deprecation in version 10.
@@ -22,9 +22,9 @@ import {MaterialModule} from './app/material.module';
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
+    DemoMaterialModule,
     MatNativeDateModule,
     ReactiveFormsModule,
-    MaterialModule
   ],
   entryComponents: [AppComponent],
   declarations: [AppComponent],
@@ -37,3 +37,8 @@ export class AppModule {}
 
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));
+
+
+/**  Copyright 2020 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license */
