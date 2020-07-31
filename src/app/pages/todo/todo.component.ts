@@ -14,6 +14,10 @@ export class TodoComponent {
   newTodo: Todo = new Todo();
 
  constructor(private todoService: TodoService) {
+   this.newTodo.title = "viorel";
+   
+   console.log(this.newTodo.title);
+   
  }
 
  addTodo() {
