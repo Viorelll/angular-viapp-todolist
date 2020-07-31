@@ -5,10 +5,10 @@
     "outDir": "./dist/out-tsc",
     "paths": {
        "@models": [
-        "./app/models"
+        "./app/models/index"
       ],
       "@services": [
-        "./app/services"
+        "./app/services/index"
       ]
     },
     "sourceMap": true,
@@ -24,6 +24,7 @@
     ],
     "lib": [
       "es2018",
+      "es2019",
       "dom"
     ]
   },
