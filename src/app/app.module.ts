@@ -14,7 +14,7 @@ import { MaterialModule } from './material-module';
 const appRoutes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./pages/todo/todo.module').then(m => m.ToDoModule)
+    loadChildren: () => import('./pages/todo/todo.module').then(m => m.TodoModule)
   }
 ];
 

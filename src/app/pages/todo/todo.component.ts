@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./todo.component.scss']
 })
 
-export class ToDoComponent {
+export class TodoComponent {
 
 }
