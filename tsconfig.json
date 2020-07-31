@@ -5,10 +5,10 @@
     "outDir": "./dist/out-tsc",
     "paths": {
        "@models": [
-        "./app/models/index"
+        "./app/models"
       ],
       "@services": [
-        "./app/services/index"
+        "./app/services"
       ]
     },
     "sourceMap": true,

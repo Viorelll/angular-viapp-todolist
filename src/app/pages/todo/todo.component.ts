@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TodoService } from '@services';
+import { TodoService } from '../../services';
 
 @Component({
   selector: 'to-do',
