@@ -1,3 +1,3 @@
 # angular-viapp-todolist
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/angular-viapp-todolist)
+[See on ⚡️](https://angular-viapp-todolist.stackblitz.iot)
