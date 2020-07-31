@@ -8,7 +8,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
 
 import { AppComponent } from './app.component';
-import { HelloComponent } from './hello.component';
 import { MaterialModule } from './material-module';
 
 @NgModule({
@@ -21,8 +20,8 @@ import { MaterialModule } from './material-module';
     MatNativeDateModule,
     ReactiveFormsModule,
   ],
-  exports: [HelloComponent],
-  declarations: [AppComponent, HelloComponent],
+  exports: [],
+  declarations: [AppComponent],
   bootstrap: [AppComponent],
   providers: [
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } },
