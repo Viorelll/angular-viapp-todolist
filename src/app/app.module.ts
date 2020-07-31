@@ -8,7 +8,8 @@ import { MaterialModule } from './material-module';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, MaterialModule ],
-  declarations: [ AppComponent, HelloComponent ],
+  exports: [HelloComponent]
+  declarations: [ AppComponent, HelloComponent ]
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

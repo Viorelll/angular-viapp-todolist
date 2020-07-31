@@ -7,10 +7,10 @@ import {MatNativeDateModule} from '@angular/material/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {DemoMaterialModule} from './app/material-module';
+import {MaterialModule} from './app/material-module';
 import {MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
 
-import {BadgeOverviewExample} from './app/badge-overview-example';
+
 import { AppComponent } from './app/app.component';
 
 // Default MatFormField appearance to 'fill' as that is the new recommended approach and the
@@ -22,7 +22,7 @@ import { AppComponent } from './app/app.component';
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
-    DemoMaterialModule,
+    MaterialModule,
     MatNativeDateModule,
     ReactiveFormsModule,
   ],
