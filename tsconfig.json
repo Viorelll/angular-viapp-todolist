@@ -3,14 +3,14 @@
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
-    "paths": {
-       "@models": [
-        "./app/models"
-      ],
-      "@services": [
-        "./app/services"
-      ]
-    },
+    // "paths": {
+    //    "@models": [
+    //     "./app/models"
+    //   ],
+    //   "@services": [
+    //     "./app/services"
+    //   ]
+    // },
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
@@ -24,7 +24,6 @@
     ],
     "lib": [
       "es2018",
-      "es2019",
       "dom"
     ]
   },
