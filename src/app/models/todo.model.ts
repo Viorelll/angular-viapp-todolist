@@ -1,6 +1,6 @@
 export class Todo {
   id: number;
-  name: string;
+  title: string;
   complete: boolean;
 
   constructor(values: Object = {}) {
