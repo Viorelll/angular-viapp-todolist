@@ -1,27 +1,7 @@
-<div fxLayout="column" fxLayoutAlign="start stretch" class="cards">
-  <div fxLayout="row" fxLayoutAlign="center">
-    <div fxFlex="90%" fxFlex.md="66.6667%" fxFlex.gt-md="50%">
 
-      <mat-card>
-          <mat-card-header>
-            <mat-card-title><h2>Add To Do</h2></mat-card-title>
-          </mat-card-header>
-          <mat-card-content>
-              <!-- <mat-form-field>
-                <mat-label>New to do</mat-label>
-                <textarea matInput placeholder="Ex. Buy milk..."></textarea>
-              </mat-form-field> -->
-            <div fxLayout="row" fxLayoutAlign="end">
-              <button mat-button color="primary" (click)="addToDo()">Add To Do</button>
-            </div>
-          </mat-card-content>
-      </mat-card>
-
-      <!-- <add-todo></add-todo> -->
-
-      <!-- <todo-list></todo-list> -->
-
-
-    </div>
-  </div>
+<div class="main-div">
+  <div class="cards">
+      <add-todo></add-todo>
+      <todo-list></todo-list> 
+   </div>     
 </div>
