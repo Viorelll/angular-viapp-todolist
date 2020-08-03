@@ -3,14 +3,14 @@
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
-    "_moduleAliases": {
-       "@models": [
-        "./app/models"
-      ],
-      "@services": [
-        "./app/services"
-      ]
-    },
+    // "_moduleAliases": {
+    //    "@models": [
+    //     "./app/models"
+    //   ],
+    //   "@services": [
+    //     "./app/services"
+    //   ]
+    // },
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
