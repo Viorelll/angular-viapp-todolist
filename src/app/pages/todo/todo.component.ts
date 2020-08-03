@@ -12,12 +12,7 @@ import { Todo } from '../../models';
 export class TodoComponent {
 
   newTodo: Todo = new Todo();
-  hidden = false;
-
-  toggleBadgeVisibility() {
-    this.hidden = !this.hidden;
-  }
-
+  
  constructor(private todoService: TodoService) {
    this.newTodo.title = "viorel";
    
@@ -25,20 +20,8 @@ export class TodoComponent {
    
  }
 
- addTodo() {
-   this.todoService.addTodo(this.newTodo);
-   this.newTodo = new Todo();
+ onAddTodo(todo: Todo) {
+   console.log('test ' + todo);
  }
-
- toggleTodoComplete(todo) {
-   this.todoService.toggleTodoComplete(todo);
- }
-
-  removeTodo(todo) {
-    this.todoService.deleteTodoById(todo.id);
-  }
-
-  get todos() {
-    return this.todoService.getTodos();
-  }
+  
 }
