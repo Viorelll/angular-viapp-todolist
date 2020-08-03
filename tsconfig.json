@@ -3,7 +3,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
-    "paths": {
+    "_moduleAliases": {
        "@models": [
         "./app/models"
       ],
