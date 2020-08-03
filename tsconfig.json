@@ -2,15 +2,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
-    "outDir": "./dist/out-tsc",
-    // "paths": {
-    //    "@models": [
-    //     "./app/models"
-    //   ],
-    //   "@services": [
-    //     "./app/services"
-    //   ]
-    // },
+    "outDir": "../dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
@@ -25,13 +17,18 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noFallthroughCasesInSwitch": true,
+    "strictNullChecks": true
   },
+  "exclude": [
+    "src/assets"
+  ],
   "angularCompilerOptions": {
-    "enableIvy": true,
     "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": true,
-    "strictTemplates": true,
-    "strictDomEventTypes": false
+    "strictInjectionParameters": true
   }
 }
