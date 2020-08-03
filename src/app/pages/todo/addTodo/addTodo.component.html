@@ -1,1 +1,17 @@
-<h1>AddTodoComponent</h1>
+<mat-card>
+    <mat-card-header>
+      <mat-card-title><h2>Add To Do</h2></mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-form-field class="todo-full-width">
+          <mat-label>New to do</mat-label>
+          <textarea matInput placeholder="Ex. Buy milk..."></textarea>
+        </mat-form-field>
+      <div fxLayout="row" fxLayoutAlign="end">
+        <button mat-button color="primary" (click)="addToDo()">Add To Do</button>
+      </div>
+    </mat-card-content>
+</mat-card>
+
+
+    
