@@ -12,7 +12,6 @@ import { Todo } from '../../models';
 export class TodoComponent {
 
   newTodo: Todo = new Todo();
-  fontSizePx = 16;
 
  constructor(private todoService: TodoService) {
    this.newTodo.title = "viorel";
