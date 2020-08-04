@@ -3,10 +3,9 @@
       <mat-card-title><h2>Add To Do</h2></mat-card-title>
     </mat-card-header>
     <mat-card-content>
-        <mat-form-field (change)="onAddToDoChange($event)" class="todo-full-width">
-          <mat-label>New to do</mat-label>
-          <textarea matInput placeholder="Ex. Buy milk..."></textarea>
-        </mat-form-field>
+        <mat-form-field>
+        <input matInput [formControl]="title">
+      </mat-form-field>
       <div fxLayout="row" fxLayoutAlign="end">
         <button mat-button color="primary" (click)="addTodo($event)">Add To Do</button>
       </div>

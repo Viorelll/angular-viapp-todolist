@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Todo } from "../models";
+import { Observable, of } from 'rxjs';
 
 
 @Injectable()
@@ -39,8 +40,8 @@ export class TodoService {
     return this.todos.filter(todo => todo.id == id).pop();
   }
 
-  getTodos(): Todo[] {
-    return this.todos;
+  getTodos(): Observable<Todo[]> {
+    return of(this.todos);
   }
 
   toggleTodoComplete(todo: Todo) {

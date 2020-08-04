@@ -2,7 +2,7 @@ import { AppModule } from '../../app.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from "@angular/flex-layout";
 
 
@@ -18,6 +18,7 @@ import { TodoItemComponent } from './todoList/todoItem/todoItem.component';
     FormsModule,
     MaterialModule,
     FlexLayoutModule,
+    ReactiveFormsModule,
     RouterModule.forChild([{
       path: '',
       component: TodoComponent

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { TodoService } from '../../services';
 import { Todo } from '../../models';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'to-do',
@@ -11,17 +12,17 @@ import { Todo } from '../../models';
 
 export class TodoComponent {
 
-  newTodo: Todo = new Todo();
+ todos: Observable<Todo[]>;
   
- constructor(private todoService: TodoService) {
-   this.newTodo.title = "viorel";
-   
-   console.log(this.newTodo.title);
-   
+ constructor(private todoService: TodoService) {}
+
+ ngOnInit() {
+   this.getTodoes();
  }
 
- onAddTodo(todo: Todo) {
-   console.log('test ' + todo);
+ getTodoes() {
+   return this.todoService.getTodos().subscribe(todos => this.todos = todos);
  }
+
   
 }
