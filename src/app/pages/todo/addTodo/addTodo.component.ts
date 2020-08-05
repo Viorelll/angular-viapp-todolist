@@ -27,7 +27,11 @@ export class AddTodoComponent {
              .subscribe(value => this.newTodo.title = value);
   }
 
-  addTodo(event: any) {
+  addTodo() {
+    this.newTodo.title =  this.newTodo.title.trim();
+    if (!this.newTodo.title) {
+      return;
+    }
     const newTodo = new Todo({
         title: this.newTodo.title,
         complete: false
