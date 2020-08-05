@@ -4,10 +4,12 @@
     </mat-card-header>
     <mat-card-content>
         <mat-form-field>
-        <input matInput [formControl]="title">
-      </mat-form-field>
+            <mat-label>Enter new ToDo</mat-label>
+            <input matInput [formControl]="title">
+        </mat-form-field>
       <div fxLayout="row" fxLayoutAlign="end">
-        <button mat-button color="primary" (click)="addTodo()">Add To Do</button>
+        <button mat-raised-button color="primary" (click)="addTodo()">Add To Do</button>
+
       </div>
     </mat-card-content>
 </mat-card>
