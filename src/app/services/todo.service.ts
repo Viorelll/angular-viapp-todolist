@@ -19,7 +19,7 @@ export class TodoService {
       todo.id = ++this.lastId;
     }
     this.todos.push(todo);
-
+ 
     this.tudosObservator.next(this.todos);
   }
 
@@ -41,16 +41,13 @@ export class TodoService {
     return this.todos.filter(todo => todo.id == id).pop();
   }
 
-  toggleTodoComplete(todo: Todo) {
-    this.updateTodoById(todo.id, {complete: !todo.complete});
-    
+  toggleTodoComplete(todo: Todo) {  
+    this.updateTodoById(todo.id);
     this.tudosObservator.next(this.todos);
   }
 
-  // deleteTodoById(id: number) {
-  //   this.todos = this.todos.filter(todo => todo.id != id);
-  // }
-
-
-
+  deleteTodoById(id: number) {
+    this.todos = this.todos.filter(todo => todo.id != id);
+    this.tudosObservator.next(this.todos);
+  }
 }
