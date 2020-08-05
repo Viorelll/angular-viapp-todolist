@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Todo } from "../models";
-import { Observable, of } from 'rxjs';
+import { Observable, of, BehaviorSubject } from 'rxjs';
 
 
 @Injectable()
@@ -11,42 +11,44 @@ export class TodoService {
   // automatic incrementing of ids
   lastId: number = 0;
 
-  todos: Todo[] = [];
+  private todos: Todo[] = [];
+  private tudosObservator = new BehaviorSubject<Todo[]>([]);
+  private tudosObservable$ = this.tudosObservator.asObservable();
 
-  addTodo(todo: Todo) {
+  addTodo(todo: Todo): void {
     if (!todo.id) {
       todo.id = ++this.lastId;
     }
     this.todos.push(todo);
 
-    return this;
-  }
-
-  deleteTodoById(id: number) {
-    this.todos = this.todos.filter(todo => todo.id != id);
-  }
-
-  updateTodoById(id: number, values: Object = {}) {
-    let todo = this.getTodoById(id);
-    if (!todo) {
-      return null;
-    }
-
-    Object.assign(todo, values);
-    return todo;
-  }
-
-  getTodoById(id: number): Todo {
-    return this.todos.filter(todo => todo.id == id).pop();
+    this.tudosObservator.next(this.todos);
   }
 
   getTodos(): Observable<Todo[]> {
-    return of(this.todos);
+    return this.tudosObservable$;
+  }
+  
+  updateTodoById(id: number, values: Object = {}): void {
+    let todo = this.getTodoById(id);
+    if (!todo) {
+      return;
+    }
+    Object.assign(todo, values);
+
+    this.tudosObservator.next(this.todos);
   }
 
-  toggleTodoComplete(todo: Todo) {
-    let updateTodo = this.updateTodoById(todo.id, {complete: !todo.complete});
-    return updateTodo;
+  getTodoById(id: number): any {
+    return this.todos.filter(todo => todo.id == id).pop();
   }
+
+  // deleteTodoById(id: number) {
+  //   this.todos = this.todos.filter(todo => todo.id != id);
+  // }
+
+  // toggleTodoComplete(todo: Todo) {
+  //   let updateTodo = this.updateTodoById(todo.id, {complete: !todo.complete});
+  //   return updateTodo;
+  // }
 
 }
