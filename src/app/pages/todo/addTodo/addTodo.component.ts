@@ -28,14 +28,16 @@ export class AddTodoComponent {
   }
 
   addTodo() {
-    this.newTodo.title =  this.newTodo.title.trim();
-    if (!this.newTodo.title) {
-      return;
-    }
     const newTodo = new Todo({
         title: this.newTodo.title,
         complete: false
     });
+
+    this.newTodo.title =  this.newTodo.title.trim();
+    if (!this.newTodo.title) {
+      return;
+    }
+
     this.todoService.addTodo(newTodo);
   }
 
