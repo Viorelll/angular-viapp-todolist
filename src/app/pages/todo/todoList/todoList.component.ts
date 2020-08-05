@@ -13,28 +13,13 @@ export class TodoListComponent {
 constructor(private todoService: TodoService) {}
   private todosList: Todo[] = [];
 
-  @Output() toDoChange = new EventEmitter<Todo>();
-
   ngOnInit() {
-    this.todosList = this.todoService.getTodos();
-    console.log(this.todosList);
+    this.todoService.getTodos();
   }
 
   onCompleteChange(todo: Todo, change: MatCheckboxChange) {
-
-    console.log(todo);
-    this.todoService.updateTodoById(todo.id, {
-      id: todo.id, 
-      title: todo.title, 
-      complete: change.checked
-    });
-    
-    this.toDoChange.emit({
-      ...todo,
-      complete: change.checked
-    });
-
-
+    todo.complete = change.checked;
+    this.todoService.toggleTodoComplete(todo);
   }
 
 }

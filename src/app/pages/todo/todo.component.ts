@@ -12,17 +12,4 @@ import { Observable } from 'rxjs';
 
 export class TodoComponent {
 
- todos: Observable<Todo[]>;
-  
- constructor(private todoService: TodoService) {}
-
- ngOnInit() {
-   this.getTodoes();
- }
-
- getTodoes() {
-   return this.todoService.getTodos().subscribe(todos => this.todos = todos);
- }
-
-  
 }

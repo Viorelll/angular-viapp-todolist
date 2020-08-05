@@ -13,9 +13,4 @@ export class TodoItemComponent {
   @Input() toDo: Todo;
 
   @Output() completeChange = new EventEmitter<MatCheckboxChange>();
-
-  ngOnInit() {
-    console.log(this.toDo);
-  }
-
 }

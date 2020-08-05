@@ -13,34 +13,26 @@ import { debounceTime, takeUntil } from 'rxjs/operators';
 
 export class AddTodoComponent {
 
-  private newTodo: Partial<Todo>;
-  private unsubscribe = new Subject<void>();
+  private newTodo: Todo;
 
   title: FormControl;
-  @Output() toDoChange = new EventEmitter<Partial<Todo>>();
 
-  constructor(private todoService: TodoService) { }
+  constructor(private todoService: TodoService) { 
+    this.newTodo = new Todo();
+  }
 
   ngOnInit() {
    this.title = new FormControl();
-    this.title.valueChanges
-      .pipe(debounceTime(200), takeUntil(this.unsubscribe))
-      .subscribe(value => this.toDoChange.emit({ title: value }));
+   this.title.valueChanges
+             .subscribe(value => this.newTodo.title = value);
   }
 
   addTodo(event: any) {
-    console.log(this.newTodo);
-
-   this.todoService.addTodo(new Todo({
-      id: Math.floor(Math.random() * 100),
-      title: this.newTodo.title,
-      complete: false
-   }));
-   
- }
-
-  onAddToDoChange(toDo: Partial<Todo>) {
-    this.newTodo = toDo;
+    const newTodo = new Todo({
+        title: this.newTodo.title,
+        complete: false
+    });
+    this.todoService.addTodo(newTodo);
   }
-  
+
 }

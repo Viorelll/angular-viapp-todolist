@@ -2,7 +2,6 @@ import { Injectable } from "@angular/core";
 import { Todo } from "../models";
 import { Observable, of, BehaviorSubject } from 'rxjs';
 
-
 @Injectable()
 export class TodoService {
   constructor() {}
@@ -42,13 +41,16 @@ export class TodoService {
     return this.todos.filter(todo => todo.id == id).pop();
   }
 
+  toggleTodoComplete(todo: Todo) {
+    this.updateTodoById(todo.id, {complete: !todo.complete});
+    
+    this.tudosObservator.next(this.todos);
+  }
+
   // deleteTodoById(id: number) {
   //   this.todos = this.todos.filter(todo => todo.id != id);
   // }
 
-  // toggleTodoComplete(todo: Todo) {
-  //   let updateTodo = this.updateTodoById(todo.id, {complete: !todo.complete});
-  //   return updateTodo;
-  // }
+
 
 }
