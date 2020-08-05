@@ -17,7 +17,8 @@ export class CompletedTodoList {
   
   ngOnInit(): void {
     this.todoService.getTodos()
-        .subscribe(todos => this.completedTodosList = todos);
+        .subscribe(todos => this.completedTodosList = todos
+        .filter(todo => todo.complete));
   }
 
   onCompleteChange(todo: Todo, change: MatCheckboxChange) {
