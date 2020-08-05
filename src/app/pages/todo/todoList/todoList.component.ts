@@ -10,7 +10,7 @@ import { MatCheckboxChange } from '@angular/material/checkbox';
 })
 export class TodoListComponent {
 
-constructor(private todoService: TodoService) {}
+  constructor(private todoService: TodoService) {}
   private todosList: Todo[] = [];
 
   ngOnInit() {
@@ -22,6 +22,13 @@ constructor(private todoService: TodoService) {}
   onCompleteChange(todo: Todo, change: MatCheckboxChange) {
     todo.complete = change.checked;
     this.todoService.toggleTodoComplete(todo);
+  }
+
+  getUncompletedTodos(): number {
+    if (this.todosList.length > 0) {
+      return this.todosList.filter(todo => !todo.complete).length;
+    }
+    return 0;
   }
 
 }

@@ -1,15 +1,15 @@
 <mat-card>
   <mat-card-header>
     <mat-card-title>
-        <h2>To Do list ({{todosList?.length}})</h2>
+        <h2>To Do list ({{getUncompletedTodos()}})</h2>
       </mat-card-title>
   </mat-card-header>
   <mat-card-content>
   <mat-list role="list">
-    <todo-item *ngFor="let toDoItem of todosList" 
+    <todo-list-item *ngFor="let toDoItem of todosList" 
                 [toDo]="toDoItem" 
                 (completeChange)="onCompleteChange(toDoItem, $event)">
-    </todo-item>
+    </todo-list-item>
   </mat-list>
   </mat-card-content>
 </mat-card>

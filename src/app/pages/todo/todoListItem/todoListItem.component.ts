@@ -3,7 +3,7 @@ import { Todo } from '../../../models';
 import { MatCheckboxChange } from '@angular/material/checkbox';
 
 @Component({
-  selector: 'todo-item',
+  selector: 'todo-list-item',
   templateUrl: 'todoListItem.component.html',
   styleUrls: ['todoListItem.component.scss']
 })
