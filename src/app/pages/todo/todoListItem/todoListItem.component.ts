@@ -4,11 +4,11 @@ import { MatCheckboxChange } from '@angular/material/checkbox';
 
 @Component({
   selector: 'todo-item',
-  templateUrl: 'todoItem.component.html',
-  styleUrls: ['todoItem.component.scss']
+  templateUrl: 'todoListItem.component.html',
+  styleUrls: ['todoListItem.component.scss']
 })
 
-export class TodoItemComponent {
+export class TodoListItemComponent {
 
   @Input() toDo: Todo;
 

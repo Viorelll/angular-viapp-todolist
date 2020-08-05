@@ -5,12 +5,12 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from "@angular/flex-layout";
 
+import { MaterialModule } from "../../material-module";
 
 import { TodoComponent } from "./todo.component";
 import { TodoListComponent } from "./todoList/todoList.component";
 import { AddTodoComponent } from "./addTodo/addTodo.component";
-import { MaterialModule } from '../../material-module';
-import { TodoItemComponent } from './todoList/todoItem/todoItem.component';
+import { TodoListItemComponent } from "./todoListItem/todoListItem.component";
 
 @NgModule({
   imports: [
@@ -24,6 +24,6 @@ import { TodoItemComponent } from './todoList/todoItem/todoItem.component';
       component: TodoComponent
     }])
   ],
-  declarations: [TodoComponent, TodoListComponent, TodoItemComponent, AddTodoComponent]
+  declarations: [TodoComponent, TodoListComponent, TodoListItemComponent, AddTodoComponent]
 })
 export class TodoModule {}
