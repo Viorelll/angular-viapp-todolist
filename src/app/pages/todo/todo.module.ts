@@ -11,6 +11,7 @@ import { TodoComponent } from "./todo.component";
 import { TodoListComponent } from "./todoList/todoList.component";
 import { AddTodoComponent } from "./addTodo/addTodo.component";
 import { TodoListItemComponent } from "./todoListItem/todoListItem.component";
+import { CompletedTodoList } from './completedTodoList/completedTodoList.component';
 
 @NgModule({
   imports: [
@@ -24,6 +25,6 @@ import { TodoListItemComponent } from "./todoListItem/todoListItem.component";
       component: TodoComponent
     }])
   ],
-  declarations: [TodoComponent, TodoListComponent, TodoListItemComponent, AddTodoComponent]
+  declarations: [TodoComponent, TodoListComponent, TodoListItemComponent, AddTodoComponent, CompletedTodoList]
 })
 export class TodoModule {}
