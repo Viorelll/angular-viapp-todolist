@@ -15,7 +15,8 @@ constructor(private todoService: TodoService) {}
 
   ngOnInit() {
     this.todoService.getTodos()
-                    .subscribe(todos => this.todosList = todos);
+                    .subscribe(todos => 
+                        this.todosList = todos.filter(todo => !todo.complete));
   }
 
   onCompleteChange(todo: Todo, change: MatCheckboxChange) {
