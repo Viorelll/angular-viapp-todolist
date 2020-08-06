@@ -13,4 +13,6 @@ export class TodoListItemComponent {
   @Input() toDo: Todo;
 
   @Output() completeChange = new EventEmitter<MatCheckboxChange>();
+
+  @Output() deleteChange = new EventEmitter<number>();
 }

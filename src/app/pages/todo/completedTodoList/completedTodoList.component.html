@@ -6,7 +6,8 @@
     <mat-list role="list">
         <todo-list-item *ngFor="let completeTodo of completedTodosList" 
                   [toDo]="completeTodo" 
-                  (completeChange)="onCompleteChange(completeTodo, $event)">
+                  (completeChange)="onCompleteChange(completeTodo, $event)"
+                  (deleteChange)="onDeleteCompletedTodo(completeTodo)">
         </todo-list-item> 
       </mat-list>
   </mat-card-content>

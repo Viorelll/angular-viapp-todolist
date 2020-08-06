@@ -8,7 +8,8 @@
   <mat-list role="list">
     <todo-list-item *ngFor="let toDoItem of todosList" 
                 [toDo]="toDoItem" 
-                (completeChange)="onCompleteChange(toDoItem, $event)">
+                (completeChange)="onCompleteChange(toDoItem, $event)"
+                (deleteChange)="onDelete(toDoItem)">
     </todo-list-item>
   </mat-list>
   </mat-card-content>

@@ -26,6 +26,10 @@ export class CompletedTodoList {
     this.todoService.toggleTodoComplete(todo);
   }
 
+  onDeleteCompletedTodo(todo: Todo) {
+    this.todoService.deleteTodoById(todo.id);
+  }
+
    getCompletedTodos(): number {
     if (this.completedTodosList.length > 0) {
       return this.completedTodosList.filter(todo => todo.complete).length;

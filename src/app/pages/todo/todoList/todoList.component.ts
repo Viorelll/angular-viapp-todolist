@@ -24,11 +24,17 @@ export class TodoListComponent {
     this.todoService.toggleTodoComplete(todo);
   }
 
+  onDelete(todo: Todo) {
+    this.todoService.deleteTodoById(todo.id);
+  }
+
   getUncompletedTodos(): number {
     if (this.todosList.length > 0) {
       return this.todosList.filter(todo => !todo.complete).length;
     }
     return 0;
   }
+
+  
 
 }

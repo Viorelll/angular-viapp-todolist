@@ -1,11 +1,15 @@
 <mat-list-item [class.complete]="toDo?.complete">
-  <mat-checkbox [checked]="toDo.complete" 
-                (change)="this.completeChange.emit($event)">
-  {{ toDo?.title }}
-  </mat-checkbox>
+  <div class="fill-space">
+    <mat-checkbox [checked]="toDo.complete" 
+                  (change)="this.completeChange.emit($event)">
+    {{ toDo?.title }}
+    </mat-checkbox>
 
-    <button mat-fab color="primary" aria-label="Delete ToDo">
+    <button mat-fab color="primary" 
+            aria-label="Delete ToDo" 
+            (click)="this.deleteChange.emit($event)">
           <mat-icon>delete</mat-icon>
     </button>
+  </div>
  
 </mat-list-item>
